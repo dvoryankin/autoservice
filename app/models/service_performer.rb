@@ -1,0 +1,2 @@
+class ServicePerformer < ApplicationRecord
+end
