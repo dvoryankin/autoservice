@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7aae00fb-5e71-4c04-9cf6-5ab58c8752f1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/autoservice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/autoservice.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +29,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/dv/Projects/Rails/autoservice",
+    "last_opened_file_path": "/home/st/projects/autoservice",
     "nodejs_package_manager_path": "yarn",
     "ruby.rails.projectView.checked": "true",
     "settings.editor.selected.configurable": "MTConfigurable"
@@ -147,6 +148,7 @@
       <option name="presentableId" value="Default" />
       <updated>1657196872126</updated>
       <workItem from="1657196873555" duration="4100000" />
+      <workItem from="1657364635331" duration="302000" />
     </task>
     <servers />
   </component>
