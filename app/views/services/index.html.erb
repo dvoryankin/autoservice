@@ -1,0 +1,37 @@
+<br>
+  <%#= link_to 'to users', users_path %>
+</br><hr><hr><br />
+</hr>
+</hr>
+<%= link_to 'new service', new_service_path %>
+<br />
+<hr />
+<h1>
+  Services
+  <h4>|' hr</h4>
+  <hr>| aa bb cc</hr>
+</h1>
+<h2>again Services</h2>
+<h3>other
+</h3>
+<ul>
+  <li>
+    <p>lalala1</p>
+  </li>
+  <li>
+    <p>lalala2
+    </p>
+  </li>
+</ul>
+<% @services.each do |service|
+%>
+  <p><%= link_to service.performer_name, service_path(service.id) %>
+  </p>
+  <small>
+    <i><%= service.performer_name %>, <%= service.created_at.strftime("%H:%m %d.%m.%Y") %></i>
+  </small>
+  <%= link_to 'edit', edit_service_path(service.id) %>
+  <%= link_to 'delete', service_path(service.id), method: :delete, data: { confirm: 'are you sure?'} %>
+  <hr />
+  <hr />
+<% end %>

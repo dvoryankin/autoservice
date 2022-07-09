@@ -1,2 +1,0 @@
-class ServicePerformer < ApplicationRecord
-end

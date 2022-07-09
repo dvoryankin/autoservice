@@ -1,0 +1,25 @@
+<br />
+<%= link_to 'back to services', root_path %>
+<br />
+<h1>
+  Service №
+  <%= @service.id %>
+</h1>
+<p>
+  <%= @service.performer_name %>
+</p>
+<p>
+  <%=   %>
+</p>
+<p>
+  <%=   %>
+</p>
+<p>
+  <small>
+    created at
+    <%= @service.created_at.in_time_zone('Moscow').strftime("%H:%m %d.%m.%Y") %>
+  </small></p>
+<%= link_to 'edit', edit_service_path(@service.id) %>
+<hr />
+<hr />
+<hr />

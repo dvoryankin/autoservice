@@ -1,8 +1,7 @@
 class CreateOrders < ActiveRecord::Migration[6.1]
   def change
     create_table :orders do |t|
-      t.string :performer_name
-      t.datetime :created_time
+      t.string :customer_name
 
       t.timestamps
     end

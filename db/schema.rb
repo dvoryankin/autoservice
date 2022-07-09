@@ -10,16 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_08_130249) do
+ActiveRecord::Schema.define(version: 2022_07_09_135254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "orders", force: :cascade do |t|
-    t.string "performer_name"
-    t.datetime "created_time"
+    t.string "customer_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "performers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "service_id"
+    t.index ["service_id"], name: "index_performers_on_service_id"
   end
 
   create_table "service_categories", force: :cascade do |t|
@@ -28,16 +35,12 @@ ActiveRecord::Schema.define(version: 2022_07_08_130249) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "service_performers", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "services", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "order_id"
+    t.index ["order_id"], name: "index_services_on_order_id"
   end
 
 end
