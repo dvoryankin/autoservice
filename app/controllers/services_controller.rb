@@ -52,7 +52,7 @@ class ServicesController < ApplicationController
   private
 
   def service_params
-    params.require(:service).permit(:title, :body, :author)
+    params.require(:service).permit(:title, :order)
     #require заберёт из парамса те данные, которые касаются статьи service
   end
 end

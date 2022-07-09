@@ -1,16 +1,20 @@
 10.times do
   Order.create(
-    performer_name: Faker::Name.unique.name
+    customer_name: Faker::Name.unique.name
   )
 end
 
-10.times do
-  Service.create(
-    title: Faker::String.random(length: [0, 6]),
-
-  )
+5.times do
+  Service.create( title: Faker::Space.planet, order_id: 1)
 end
 
-Service.create( title: Faker::String.random(length: [0, 6]))
+5.times do
+  Service.create( title: Faker::Space.planet, order_id: 2)
+end
 
-s = Service.new( title: Faker::String.random(length: [0, 6]))
+
+
+
+rake db:drop
+rake db:create
+rake db:migrate
