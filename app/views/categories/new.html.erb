@@ -1,0 +1,25 @@
+<br />
+<%= link_to 'back to categories', categories_path %>
+<h1>
+  New category
+</h1>
+<%= form_with(model: @category) do |form| %>
+
+  <%#= @user.errors.full_messages.join(", ") if @user.errors.present? %>
+
+  <% @category.errors.full_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <hr>
+
+  <br>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

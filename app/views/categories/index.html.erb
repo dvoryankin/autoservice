@@ -1,0 +1,39 @@
+<br>
+<%= link_to 'Main page', root_path %>
+<br>
+  <%#= link_to 'to users', users_path %>
+</br><hr><hr><br />
+</hr>
+</hr>
+<%= link_to 'new category', new_category_path %>
+<br />
+<hr />
+<h1>
+  Categorys
+  <h4>|' hr</h4>
+  <hr>| aa bb cc</hr>
+</h1>
+<h2>again Categorys</h2>
+<h3>other
+</h3>
+<ul>
+  <li>
+    <p>lalala1</p>
+  </li>
+  <li>
+    <p>lalala2
+    </p>
+  </li>
+</ul>
+<% @categories.each do |category|
+%>
+  <p><%= link_to category.title, category_path(category.id) %>
+  </p>
+  <small>
+    <i><%= category.title %>, <%= category.created_at.strftime("%H:%m %d.%m.%Y") %></i>
+  </small>
+  <%= link_to 'edit', edit_category_path(category.id) %>
+  <%= link_to 'delete', category_path(category.id), method: :delete, data: { confirm: 'are you sure?'} %>
+  <hr />
+  <hr />
+<% end %>

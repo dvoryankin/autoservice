@@ -1,20 +1,27 @@
 <br />
-<%= link_to 'back to orders', root_path %>
+<%= link_to 'back to orders', orders_path %>
 <br />
 <h1>
   Order №
   <%= @order.id %>
 </h1>
-<p>
-  <%= @order.performer_name %>
-</p>
-<p>
-  <%=   %>
-</p>
-<p>
-  <%=   %>
-</p>
-<p>
+<p>Customer name: <%= @order.customer_name %></p>
+<% @order.services.each do |s| %>
+  <br>
+  service title:
+  <%= s.title %>
+  <br>
+  created at
+  <%= s.created_at %>
+  <br>
+  performer name:
+  <%= s&.performer&.name %>
+  <br>
+  <hr>
+<% end %>
+
+
+  <p>
   <small>
     created at
     <%= @order.created_at.in_time_zone('Moscow').strftime("%H:%m %d.%m.%Y") %>

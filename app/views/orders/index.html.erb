@@ -1,4 +1,6 @@
 <br>
+<%= link_to 'Main page', root_path %>
+<br>
   <%#= link_to 'to users', users_path %>
 </br><hr><hr><br />
 </hr>
@@ -25,10 +27,10 @@
 </ul>
 <% @orders.each do |order|
 %>
-  <p><%= link_to order.performer_name, order_path(order.id) %>
+  <p><%= link_to order.customer_name, order_path(order.id) %>
   </p>
   <small>
-    <i><%= order.performer_name %>, <%= order.created_at.strftime("%H:%m %d.%m.%Y") %></i>
+    <i><%= order.customer_name %>, <%= order.created_at.strftime("%H:%m %d.%m.%Y") %></i>
   </small>
   <%= link_to 'edit', edit_order_path(order.id) %>
   <%= link_to 'delete', order_path(order.id), method: :delete, data: { confirm: 'are you sure?'} %>

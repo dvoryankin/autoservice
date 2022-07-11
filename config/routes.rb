@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'orders#index'
+  root 'welcome#index'
   resources :orders
   resources :services
   resources :performers
-  resources :service_categories
+  resources :categories
 end

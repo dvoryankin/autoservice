@@ -52,7 +52,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:title, :body, :author)
+    params.require(:order).permit(:customer_name)
     #require заберёт из парамса те данные, которые касаются статьи order
   end
 end

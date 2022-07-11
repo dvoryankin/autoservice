@@ -1,0 +1,25 @@
+<br />
+<%= link_to 'back to categorys', root_path %>
+<br />
+<h1>
+  Category №
+  <%= @category.id %>
+</h1>
+<p>
+  <%= @category.title %>
+</p>
+<p>
+  <%=   %>
+</p>
+<p>
+  <%=   %>
+</p>
+<p>
+  <small>
+    created at
+    <%= @category.created_at.in_time_zone('Moscow').strftime("%H:%m %d.%m.%Y") %>
+  </small></p>
+<%= link_to 'edit', edit_category_path(@category.id) %>
+<hr />
+<hr />
+<hr />
