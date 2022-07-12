@@ -1,0 +1,11 @@
+<%= form_for(@order) do |f| %>
+  <%= render 'common/errors', resource: @order %>
+
+  <div class="field" >
+    <%= f.label :customer_name %>
+    <%= f.text_field :customer_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit "#{ @order.new_record? ? 'Create' : 'Change' }" %>
+  </div>
+<% end %>
