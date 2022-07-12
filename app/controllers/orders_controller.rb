@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def index
-    @orders = Order.order(created_at: :desc)
+    @orders = Order.order(params[:sort])
   end
 
   def new
