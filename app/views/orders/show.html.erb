@@ -1,15 +1,20 @@
 <br />
 <%= link_to 'back to orders', orders_path %>
 <br />
-<h2>
+<h3>
   Order №
   <%= @order.id %>
-</h2>
+  <br>
+  <%= @order.customer_name %>
+</h3>
+<%= link_to 'edit', edit_order_path(@order.id) %>
+<br>
+<br>
 <p>Customer name: <%= @order.customer_name %></p>
 <% @order.services.each do |s| %>
   <br>
   service title:
-  <%= s.title %>
+  <%= s&.title %>
   <br>
   performer name:
   <%= s&.performer&.name %>
@@ -23,7 +28,6 @@
     created at
     <%= @order.created_at.in_time_zone('Moscow').strftime("%H:%m %d.%m.%Y") %>
   </small></p>
-<%= link_to 'edit', edit_order_path(@order.id) %>
 <hr />
 <hr />
 <hr />

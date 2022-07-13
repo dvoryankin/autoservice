@@ -15,8 +15,8 @@
 
   <div>
     <br>
-    <%= form.label :order %>
-    <%= form.collection_select :service, Order.all, :id, :customer_name%>
+    <%= form.label :category %>
+    <%= form.collection_select :category, Category.all, :id, :title%>
   </div>
   <hr>
 

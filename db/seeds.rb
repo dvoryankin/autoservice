@@ -1,6 +1,6 @@
-rake db:drop
-rake db:create
-rake db:migrate
+# rake db:drop
+# rake db:create
+# rake db:migrate
 
 10.times do
   Order.create(
@@ -9,23 +9,25 @@ rake db:migrate
 end
 
 5.times do
-  Service.create( title: Faker::Space.planet, order_id: 1)
+  Service.create( title: Faker::Color.color_name, order_id: rand(1..10), category_id: rand(1..10))
 end
 
 5.times do
-  Service.create( title: Faker::Space.planet, order_id: 2)
+  Performer.create( name: Faker::Artist.name, service_id: rand(1..10))
 end
 
 5.times do
-  Performer.create( name: Faker::Space.planet, service_id: 2)
+  Category.create( title: Faker::Space.planet, service_id: rand(1..10))
 end
+
+
 
 s = Service.create(title:'test', order: Order.first)
 
 Order.first.services << Service.first
 
-Order.first.services(true)
+# Order.first.services(true)
 
 Order.first.services.create(title: 'test1')
 
-Order.first.services.find(4)
+# Order.first.services.find(4)
