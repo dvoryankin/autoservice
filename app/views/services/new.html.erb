@@ -17,9 +17,9 @@
   </div>
 
   <div>
-  <%= form.label :order %>
-  <%= form.text_field :order %>
-</div>
+    <%= form.label :order %>
+    <%= form.collection_select :order, Order.all, :id, :customer_name%>
+  </div>
   <hr>
 
   <br>

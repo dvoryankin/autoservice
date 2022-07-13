@@ -15,6 +15,11 @@
     <%= form.label :customer_name %>
     <%= form.text_field :customer_name %>
   </div>
+<br>
+  <div>
+    <%= form.label :service %>
+    <%= form.collection_select :order, Service.all, :id, :title %>
+  </div>
 
   <hr>
 

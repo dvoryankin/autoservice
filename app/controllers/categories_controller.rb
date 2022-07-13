@@ -52,7 +52,7 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:title, :body, :author)
+    params.require(:category).permit(:title, :category,:performer)
     #require заберёт из парамса те данные, которые касаются статьи category
   end
 end

@@ -12,8 +12,17 @@
     <%= form.text_field :title %>
   </div>
   <hr>
-
+  <div>
+    <%= form.label :service_category %>
+    <%= form.collection_select :category, Category.all, :id, :title%>
+  </div>
+  <hr>
+  <div>
+    <%= form.label :performer %>
+    <%= form.collection_select :performer, Performer.all, :id, :name%>
+  </div>
   <br>
+
   <div>
     <%= form.submit %>
   </div>
