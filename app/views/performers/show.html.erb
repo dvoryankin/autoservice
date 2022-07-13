@@ -1,0 +1,20 @@
+<br />
+<%= link_to 'back to performers', performers_path %>
+<br />
+<h2>
+  performer №
+  <%= @performer.id %>
+</h2>
+<p>Performer name: <%= @performer.name %></p>
+<p>Order №: <%= @performer.service.order.customer_name %></p>
+<p>Service №: <%= @performer.service.id %></p>
+
+  <p>
+  <small>
+    created at
+    <%= @performer.created_at.in_time_zone('Moscow').strftime("%H:%m %d.%m.%Y") %>
+  </small></p>
+<%= link_to 'edit', edit_performer_path(@performer.id) %>
+<hr />
+<hr />
+<hr />

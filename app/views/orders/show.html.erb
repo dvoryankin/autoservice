@@ -1,10 +1,10 @@
 <br />
 <%= link_to 'back to orders', orders_path %>
 <br />
-<h1>
+<h2>
   Order №
   <%= @order.id %>
-</h1>
+</h2>
 <p>Customer name: <%= @order.customer_name %></p>
 <% @order.services.each do |s| %>
   <br>

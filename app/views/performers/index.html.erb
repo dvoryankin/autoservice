@@ -1,40 +1,25 @@
 <br>
 <%= link_to 'Main page', root_path %>
 <br>
-
-  <%#= link_to 'to users', users_path %>
-</br><hr><hr><br />
-</hr>
-</hr>
+<hr>
 <%= link_to 'new performer', new_performer_path %>
-<br />
-<hr />
-<h1>
-  Performers
-  <h4>|' hr</h4>
-  <hr>| aa bb cc</hr>
-</h1>
-<h2>again Performers</h2>
-<h3>other
-</h3>
-<ul>
-  <li>
-    <p>lalala1</p>
-  </li>
-  <li>
-    <p>lalala2
-    </p>
-  </li>
-</ul>
-<% @performers.each do |performer|
-%>
-  <p><%= link_to performer.name, performer_path(performer.id) %>
-  </p>
-  <small>
-    <i><%= performer.name %>, <%= performer.created_at.strftime("%H:%m %d.%m.%Y") %></i>
-  </small>
-  <%= link_to 'edit', edit_performer_path(performer.id) %>
-  <%= link_to 'delete', performer_path(performer.id), method: :delete, data: { confirm: 'are you sure?'} %>
-  <hr />
-  <hr />
-<% end %>
+<hr>
+
+<h3>performers</h3>
+<table class="table">
+  <thead>
+  <tr >
+    <th class="col-lg-1"><%= link_to "Id", :sort => "id"%> </th>
+    <th class="col-lg-2"><%= link_to "Performer Name", :sort => "performer_name"%> </th>
+    <th class="col-lg-1 text-right"><%= link_to "Created at", :sort => "created_at"%> </th>
+  </tr>
+  <% @performers.each do |performer| %>
+    <tr>
+      <td><%= performer.id %></td>
+      <td><%= link_to "#{performer.name}", performer_path(performer.id) %></td><td>
+      <td><%= performer.created_at %></td>
+    </tr>
+  <% end %>
+  </thead>
+</table>
+<hr>

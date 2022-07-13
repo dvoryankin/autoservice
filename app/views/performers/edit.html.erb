@@ -1,0 +1,20 @@
+<br>
+<%= form_with(model: @performer) do |form| %>
+
+  <%#= @user.errors.full_messages.join(", ") if @user.errors.present? %>
+
+  <% @performer.errors.full_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <hr>
+
+  <br>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

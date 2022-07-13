@@ -14,11 +14,16 @@
   <hr>
 
   <div>
-    'service: '
     <br>
-    <%= @order.services %>
-    <%= form.label :service %>
-    <%= form.text_field :customer_name %>
+    <%= form.label :order %>
+    <%= form.collection_select :service, Order.all, :id, :customer_name%>
+  </div>
+  <hr>
+
+  <div>
+    <br>
+    <%= form.label :Performer %>
+    <%= form.collection_select :performer, Performer.all, :id, :name%>
   </div>
   <hr>
 
