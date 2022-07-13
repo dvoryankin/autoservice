@@ -1,5 +1,5 @@
 class Service < ApplicationRecord
   belongs_to :order
-  has_one :category
+  belongs_to :category
   has_one :performer
 end

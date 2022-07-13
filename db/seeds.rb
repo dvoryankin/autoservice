@@ -8,16 +8,16 @@
   )
 end
 
-5.times do
+10.times do
   Service.create( title: Faker::Color.color_name, order_id: rand(1..10), category_id: rand(1..10))
 end
 
-5.times do
+10.times do
   Performer.create( name: Faker::Artist.name, service_id: rand(1..10))
 end
 
-5.times do
-  Category.create( title: Faker::Space.planet, service_id: rand(1..10))
+10.times do
+  Category.create( title: Faker::Space.planet)
 end
 
 
