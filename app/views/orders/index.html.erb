@@ -2,50 +2,28 @@
 <%= link_to 'Main page', root_path %>
 <br>
   <%#= link_to 'to users', users_path %>
-</br>
-<hr>
 <hr>
 
-Order №
-<table>
-  <tr>
-    <th><%= link_to "Id", :sort => "id"%> </th>
-    <th><%= link_to "Customer Name", :sort => "customer_name"%> </th>
-    <th><%= link_to "Created at", :sort => "created_at"%> </th>
-  </tr>
-  <% @orders.each do |order| %>
+<table class="table">
+  <thead>
     <tr>
-      <td><%= order.id %></td>
-      <td><%= order.customer_name %></td><td>
-      <td><%=order.created_at %></td>
+      <th scope="col"><%= link_to "Id", :sort => "id"%> </th>
+      <th scope="col"><%= link_to "Customer Name", :sort => "customer_name"%> </th>
+      <th scope="col"><%= link_to "Created at", :sort => "created_at"%> </th>
     </tr>
-  <% end %>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.customer_name %></td><td>
+        <td><%=order.created_at %></td>
+      </tr>
+    <% end %>
+  </thead>
 </table>
 <hr>
-<hr>
-<hr>
-
 
 <%= link_to 'new order', new_order_path %>
-<br />
-<hr />
-<h1>
-  Orders
-  <h4>|' hr</h4>
-  <hr>| aa bb cc</hr>
-</h1>
-<h2>again Orders</h2>
-<h3>other
-</h3>
-<ul>
-  <li>
-    <p>lalala1</p>
-  </li>
-  <li>
-    <p>lalala2
-    </p>
-  </li>
-</ul>
+
 <% @orders.each do |order|
 %>
   <p><%= link_to order.customer_name, order_path(order.id) %>
@@ -55,6 +33,5 @@ Order №
   </small>
   <%= link_to 'edit', edit_order_path(order.id) %>
   <%= link_to 'delete', order_path(order.id), method: :delete, data: { confirm: 'are you sure?'} %>
-  <hr />
   <hr />
 <% end %>
