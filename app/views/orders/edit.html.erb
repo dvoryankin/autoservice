@@ -1,3 +1,4 @@
+<br>
 <%= form_with(model: @order) do |form| %>
 
   <%#= @user.errors.full_messages.join(", ") if @user.errors.present? %>
@@ -8,6 +9,15 @@
 
   <div>
     <%= form.label :customer_name %>
+    <%= form.text_field :customer_name %>
+  </div>
+  <hr>
+
+  <div>
+    'service: '
+    <br>
+    <%= @order.services %>
+    <%= form.label :service %>
     <%= form.text_field :customer_name %>
   </div>
   <hr>

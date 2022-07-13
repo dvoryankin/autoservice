@@ -16,6 +16,10 @@ end
   Service.create( title: Faker::Space.planet, order_id: 2)
 end
 
+5.times do
+  Performer.create( name: Faker::Space.planet, service_id: 2)
+end
+
 s = Service.create(title:'test', order: Order.first)
 
 Order.first.services << Service.first

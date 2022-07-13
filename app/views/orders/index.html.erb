@@ -29,7 +29,7 @@
   <p><%= link_to order.customer_name, order_path(order.id) %>
   </p>
   <small>
-    <i><%= order.customer_name %>, <%= order.created_at.strftime("%H:%m %d.%m.%Y") %></i>
+    <i><%= order.customer_name %>, <%= order.created_at.in_time_zone('Moscow').strftime("%H:%m %d.%m.%Y")%></i>
   </small>
   <%= link_to 'edit', edit_order_path(order.id) %>
   <%= link_to 'delete', order_path(order.id), method: :delete, data: { confirm: 'are you sure?'} %>

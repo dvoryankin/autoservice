@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
   def index
-    @services = Service.order(created_at: :desc)
+    @services = Service.order(params[:sort])
   end
 
   def new
