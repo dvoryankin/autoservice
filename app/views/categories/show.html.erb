@@ -1,5 +1,5 @@
 <br />
-<%= link_to 'back to categorys', root_path %>
+<%= link_to 'back to categories', root_path %>
 <br />
 <h1>
   Category №
@@ -20,6 +20,7 @@
     <%= @category.created_at.in_time_zone('Moscow').strftime("%H:%m %d.%m.%Y") %>
   </small></p>
 <%= link_to 'edit', edit_category_path(@category.id) %>
+<%= link_to 'delete', category_path(@category.id), method: :delete, data: { confirm: 'are you sure?'} %>
 <hr />
 <hr />
 <hr />

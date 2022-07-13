@@ -1,0 +1,22 @@
+<br>
+<%= form_with(model: @category) do |form| %>
+
+  <%#= @user.errors.full_messages.join(", ") if @user.errors.present? %>
+
+  <% @category.errors.full_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+
+  <div>
+    <%= form.label :category_title %>
+    <%= form.text_field :title %>
+  </div>
+  <hr>
+
+  <hr>
+
+  <br>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -9,8 +9,11 @@
   service title:
   <%= @service.title %>
   <br>
+  service category:
+  <%= @service.category&.title %>
+  <br>
   performer name:
-  <%= @service.performer.name %>
+  <%= @service.performer&.name %>
   <br>
   <%=  %>
 </p>
@@ -26,6 +29,8 @@
     <%= @service.created_at.in_time_zone('Moscow').strftime("%H:%m %d.%m.%Y") %>
   </small></p>
 <%= link_to 'edit', edit_service_path(@service.id) %>
+<br>
+<%= link_to 'delete', service_path(@service.id), method: :delete, data: { confirm: 'are you sure?'} %>
 <hr />
 <hr />
 <hr />
