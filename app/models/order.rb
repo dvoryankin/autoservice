@@ -3,5 +3,6 @@ class Order < ApplicationRecord
 
   validates :customer_name, presence: true
 
-  default_scope { order(created_at: :asc) }
+  has_many :services_orders
+  has_many :services, through: :services_orders
 end

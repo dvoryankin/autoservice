@@ -3,5 +3,6 @@ class Service < ApplicationRecord
   belongs_to :category
   has_one :performer
 
-  default_scope { order(created_at: :asc) }
+  has_many :services_orders
+  has_many :orders, through: :services_orders
 end
