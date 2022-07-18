@@ -4,13 +4,14 @@
 <h3>
   Order №
   <%= @order.id %>
-  <br>
-  <%= @order.customer_name %>
 </h3>
-<%= link_to 'edit', edit_order_path(@order.id) %>
+
+<h4>Customer name
+  <%= @order.customer_name %>
+</h4>
 <br>
+Services:
 <br>
-<p>Customer name: <%= @order.customer_name %></p>
 <% @order.services.each do |s| %>
   <br>
   service title:

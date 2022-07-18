@@ -52,7 +52,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:customer_name, :service, :performer)
-    #require заберёт из парамса те данные, которые касаются статьи order
+    params.require(:order).permit(:customer_name, :service, service_ids: [])
   end
 end

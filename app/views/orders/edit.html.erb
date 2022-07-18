@@ -7,24 +7,24 @@
     <%= msg %>
   <% end %>
 
-  <div>
+  <div class="field">
     <%= form.label :customer_name %>
     <%= form.text_field :customer_name %>
   </div>
   <hr>
 
-  <div>
+  <div class="field">
     <br>
-    <%= form.label :category %>
-    <%= form.collection_select :category, Category.all, :id, :title%>
+    <%= form.label :service, 'Service'%>
+    <%= form.collection_select :service, Service.all, :id, :title, {}, { multiple: true }%>
   </div>
   <hr>
 
-  <div>
-    <br>
-    <%= form.label :Performer %>
-    <%= form.collection_select :performer, Performer.all, :id, :name%>
-  </div>
+<!--  <div>-->
+<!--    <br>-->
+    <%#= form.label :Performer %>
+    <%#= form.collection_select :performer, Performer.all, :id, :name%>
+<!--  </div>-->
   <hr>
 
   <br>
