@@ -16,7 +16,7 @@
   <div class="field">
     <br>
     <%= form.label :service, 'Service'%>
-    <%= form.collection_select :service, Service.all, :id, :title, {}, { multiple: true }%>
+    <%= form.collection_select :service_ids, Service.all, :id, :title, {}, { multiple: true }%>
   </div>
   <hr>
 
